@@ -27,6 +27,8 @@ struct ParseResultData;
 
 #define REGISTER(type, c) { ExportType::type, std::make_shared<c>() },
 
+#undef SEGMENT_OFFSET
+#undef SEGMENT_NUMBER
 #define SEGMENT_OFFSET(a) ((uint32_t)(a) & 0x00FFFFFF)
 #define SEGMENT_NUMBER(x) (((uint32_t)(x) >> 24) & 0xFF)
 // I would love to use 0x01000000, but the stupid compiler takes it as 0x01
